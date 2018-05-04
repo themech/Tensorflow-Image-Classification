@@ -3,7 +3,7 @@ import logging
 import os
 
 from data import DATASETSDIR
-from data.downloader import download_and_extract_linnaeus
+from data.downloader import download_and_extract_dataset
 
 def main():
     logging.basicConfig(level=logging.INFO)
@@ -20,8 +20,8 @@ def main():
     if not os.path.isdir(DATASETSDIR):
         os.mkdir(DATASETSDIR)
 
-    download_and_extract_linnaeus(url=args.dataset_url,
-                                  dirname=args.dataset_dirname)
+    download_and_extract_dataset(url=args.dataset_url,
+                                 dirname=args.dataset_dirname)
 
 if __name__ == '__main__':
   main()
